@@ -16,6 +16,8 @@
 
                     <a href="{{ route('contact.create') }}">Contact Us</a>
 
+                    <a href="{{ route('contact.index') }}">Contact Requests</a>
+
                 </div>
             </div>
         </div>

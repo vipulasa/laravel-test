@@ -15,7 +15,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        return view('contact.index', [
+            'contacts' => (new Contact())->newQuery()->get(),
+        ]);
     }
 
     /**
@@ -48,7 +50,7 @@ class ContactController extends Controller
 
         return redirect()
             ->route('home')
-            ->with('success', 'Thank you '.$contact->name.' for your message!. We will get back to you soon.');
+            ->with('success', 'Thank you ' . $contact->name . ' for your message!. We will get back to you soon.');
     }
 
     /**
