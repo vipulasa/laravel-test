@@ -36,7 +36,19 @@ class ContactController extends Controller
      */
     public function store(StoreContactRequest $request)
     {
-        //
+
+        $contact = (new Contact())
+            ->newQuery()
+            ->create([
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
+                'phone' => $request->input('phone'),
+                'message' => $request->input('message'),
+            ]);
+
+        return redirect()
+            ->route('home')
+            ->with('success', 'Thank you '.$contact->name.' for your message!. We will get back to you soon.');
     }
 
     /**
