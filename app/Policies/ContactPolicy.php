@@ -18,7 +18,7 @@ class ContactPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        // return $user->email == 'super-admin@apiit.lk';
     }
 
     /**
@@ -30,7 +30,7 @@ class ContactPolicy
      */
     public function view(User $user, Contact $contact)
     {
-        //
+        // return $user->id == $contact->user_id;
     }
 
     /**
